@@ -1,0 +1,14 @@
+[Unit]
+Description=GPU exporter
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/nvidia_gpu_prometheus_exporter
+KillSignal=SIGINT
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+
